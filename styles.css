@@ -1,0 +1,183 @@
+/* public/styles.css */
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0; /* Background color outside the chat box */
+}
+
+#app {
+  width: 100%; 
+  height: 100vh; /* Full viewport height */
+  background-color: #fff; /* Chat box background color */
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #075e54; /* WhatsApp header background color */
+  color: #fff; /* WhatsApp header text color */
+}
+
+#username {
+  padding: 8px;
+  font-size: 1rem;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+}
+
+main {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+aside#rooms {
+  flex: 1 1 300px;
+  border-right: 1px solid #ddd;
+  padding-right: 20px;
+}
+
+aside#rooms h2 {
+  margin-top: 0;
+  text-align: center;
+  color: #075e54; /* WhatsApp sidebar header color */
+}
+
+#room-list {
+  list-style: none;
+  padding: 0;
+}
+
+#room-list li {
+  padding: 12px;
+  cursor: pointer;
+  border-bottom: 1px solid #ddd;
+  transition: background-color 0.3s ease;
+}
+
+#room-list li:hover {
+  background-color: #f5f5f5; /* WhatsApp hover color */
+}
+
+#new-room, #message-input {
+  width: calc(100% - 20px);
+  padding: 12px;
+  margin: 10px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  outline: none;
+}
+
+#send-message, #create-room {
+  display: block;
+  width: calc(100% - 20px);
+  padding: 12px;
+  margin: 10px;
+  background-color: #075e54; /* WhatsApp send button color */
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  outline: none;
+  transition: background-color 0.3s ease;
+}
+
+#send-message:hover, #create-room:hover {
+  background-color: #128c7e; /* WhatsApp send button hover color */
+}
+
+section#chat {
+  flex: 3 1 600px;
+  display: flex;
+  flex-direction: column;
+}
+
+#messages {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto; /* Enable vertical scrolling */
+  background-color: #e5ddd5; /* Chat background color */
+
+  /* Custom scrollbar styles */
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+}
+
+/* Custom scrollbar styles for WebKit browsers */
+#messages::-webkit-scrollbar {
+  width: 10px;
+}
+
+#messages::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+#messages::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 5px;
+}
+
+#messages::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+#messages .message {
+  margin-bottom: 10px;
+  max-width: 70%;
+  position: relative;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+#messages .message .username {
+  font-weight: bold;
+  color: #075e54; /* WhatsApp username color */
+}
+
+#messages .message .timestamp {
+  font-size: 0.8rem;
+  color: #777;
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+  }
+
+  aside#rooms {
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+  }
+
+  aside#rooms h2 {
+    text-align: center;
+  }
+
+  section#chat {
+    flex: none;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #username {
+    width: calc(100% - 20px);
+    margin-top: 10px;
+  }
+}
